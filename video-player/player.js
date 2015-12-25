@@ -13,12 +13,19 @@ window.addEventListener('load', function() {
     // Time field
     timeField = document.getElementById('time-field');
     
+    // Sound Button
+    soundButton = document.getElementById('sound-button');
+    sbarContainer = document.getElementById('sbar-container');
+    sbar = document.getElementById('sbar');
+    
     video.load(); // Making sure the video loads before it can be played
     video.addEventListener('canplay',function(){
         
         playButton.addEventListener('click', playOrPause, false);
         pbarContainer.addEventListener('click', skip, false);
         updatePlayer();
+        soundButton.addEventListener('click', muteOrUmute, false);
+        sbarContainer.addEventListener('click', changeVolume, false);
         
     }, false);
     
@@ -88,4 +95,34 @@ function getFormattedTime() {
     }
     
     return minutes + ':' + seconds + ' / ' + totalMinutes + ':' + totalSeconds;
+}
+
+function muteOrUmute() {
+    
+    if (!video.muted) {
+        video.muted = true;
+        soundButton.src = 'images/mute.png';
+        sbar.style.display = 'none';
+    } else {
+        video.muted = false;
+        soundButton.src = 'images/sound.png';
+        sbar.style.display = 'block';
+    }
+}
+
+function changeVolume(clickEvent) {
+    
+    var mouseX = clickEvent.pageX - sbarContainer.offsetLeft;
+    var sbarWidth = window.getComputedStyle(sbarContainer).getPropertyValue('width');
+    sbarWidth = parseFloat(sbarWidth.substr(0, sbarWidth.length - 2)); // removing th px from the end of the string
+
+    video.volume = (mouseX/sbarWidth); // The volume has a value between 0 and 1
+    
+    sbar.style.width = video.volume * 100 + '%';
+    
+    // Unmutting the video
+    video.muted = false;
+    soundButton.src = 'images/sound.png';
+    sbar.style.display = 'block';
+
 }
