@@ -4,6 +4,7 @@ window.addEventListener('load', function() {
     video = document.getElementById('video');
     
     // Progress Bar Element
+    pbarContainer = document.getElementById('pbar-container');
     pbar = document.getElementById('pbar');
     
     // Play Button Element
@@ -13,6 +14,7 @@ window.addEventListener('load', function() {
     video.addEventListener('canplay',function(){
         
         playButton.addEventListener('click', playOrPause, false);
+        pbarContainer.addEventListener('click', skip, false);
         
     }, false);
     
@@ -40,4 +42,15 @@ function updatePlayer() {
         window.clearInterval(update);
         playButton.src = 'images/replay.png';
     }
+}
+
+function skip(clickEvent) {
+    
+    var mouseX = clickEvent.pageX - pbarContainer.offsetLeft; // Capturing position of click. Subtact offset of container from left of the page
+    var pbarWidth = window.getComputedStyle(pbarContainer).getPropertyValue('width');
+    pbarWidth = parseFloat(pbarWidth.substr(0, pbarWidth.length - 2)); // removing th px from the end of the string
+    
+    video.currentTime = (mouseX/pbarWidth) * video.duration; // Updating video location
+    
+    updatePlayer();
 }
