@@ -3,9 +3,34 @@
     <head>
     </head>
     <body>
-        <video poster="images/thumbnail.png" controls>
-            <source src="sample.mp4">
-            It seems your browser does not support the video HTML5 tag. Please update it!
-        </video>
+        
+        <div id="player">
+            
+            <div id="video-container">
+                <video poster="images/thumbnail.png">
+                    <source src="sample.mp4">
+                    It seems your browser does not support the video HTML5 tag. Please update it!
+                </video>
+            </div>
+            
+            <div id="pbar-container"><!-- Progress Bar Container -->
+                <div id="pbar">
+                </div>
+            </div>
+            
+            <div id="buttons-container">
+                <img id="play-button"  src="images/play.png">
+                <div id="time-field">
+                    0:00 / 0:00
+                </div>
+                <img id="sound-button" src="images/sound.png">
+                <div id="sbar-container"><!-- Sound Bar Container -->
+                    <div id="sbar"></div>
+                </div>
+                <img id="fullscreen-button" src="images/fullscreen.png">
+            </div>
+            
+        </div>
+        
     </body>
 </html>
