@@ -45,7 +45,7 @@ img:hover {
 }
     #pbar {
         height: 5px;
-        width: 50%;
+        width:0;
         background-color: rgb(50, 170, 220);
     }
 
@@ -81,9 +81,3 @@ img:hover {
 #fullscreen-button {
     float: right;
 }
-
-
-
-
-
-
