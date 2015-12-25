@@ -3,6 +3,12 @@ window.addEventListener('load', function() {
     // Video Element
     video = document.getElementById('video');
     
+    // Screen play button
+    screenButton = document.getElementById('screen-button');
+    
+    // Screen Container
+    pauseScreen = document.getElementById('screen');
+    
     // Progress Bar Element
     pbarContainer = document.getElementById('pbar-container');
     pbar = document.getElementById('pbar');
@@ -30,6 +36,7 @@ window.addEventListener('load', function() {
         soundButton.addEventListener('click', muteOrUmute, false);
         sbarContainer.addEventListener('click', changeVolume, false);
         fullscreenButton.addEventListener('click', fullscreen, false);
+        screenButton.addEventListener('click', playOrPause, false);
         
     }, false);
     
@@ -41,10 +48,15 @@ function playOrPause() {
         video.play();
         playButton.src = 'images/pause.png';
         update = setInterval(updatePlayer, 30); // Calling the updatePlayer function every 30ms
+        
+        pauseScreen.style.display = 'none'; // Hiding play button in middle of screen
     } else {
         video.pause();
         playButton.src = 'images/play.png';
         window.clearInterval(update);
+        
+        pauseScreen.style.display = 'block'; // Display play button in middle of screen
+        screenButton.src = 'images/play.png';
     }
 }
 
@@ -55,8 +67,18 @@ function updatePlayer() {
     timeField.innerHTML = getFormattedTime();
     
     if (video.ended) {
+        
         window.clearInterval(update);
         playButton.src = 'images/replay.png';
+        
+        pauseScreen.style.display = 'block'; // Display play button in middle of screen
+        
+        screenButton.src = 'images/replay.png';
+        
+    } else if (video.paused) {
+        
+        playButton.src = 'images/play.png';
+        screenButton.src = 'images/play.png';
     }
 }
 
