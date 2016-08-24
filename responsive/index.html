@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Responsive Example</title>
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <script src="js/jquery.js"></script>
+        <script>
+            // Toggle for width display
+            var showWidth = 1;
+            if (showWidth === 1) {
+                $(document).ready(function(){
+                    $(window).resize(function(){
+                        var width = $(window).width();
+                        document.getElementById('output_width').innerHTML = "Window Width: " + width.toString() + "px";
+                    });
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div id="output_width"></div>
+        <div id="container">
+           <header class="main-header">
+               <img id="logo" src="images/logo.png" alt="Responsive Example" />
+               <nav class="main-nav">
+                   <ul>
+                       <li><a class="active" href="#">Home</a></li>
+                       <li><a href="#">Learn</a></li>
+                       <li><a href="#">Bainstorm</a></li>
+                       <li><a href="#">Create</a></li>
+                       <li><a href="#">Collaborate</a></li>
+                       <li><a href="#">Teach</a></li>
+                   </ul>
+               </nav>
+           </header>
+            <div id="main">
+                <div id="content">
+                    <article class="art1">
+                        <header class="art-header">
+                            <h2 class="title"><a href="#">First Post</a></h2>
+                            <span>Created by: Fred Flintstone on August 24, 2016</span>
+                        </header>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae augue at lorem sodales vehicula vitae a ipsum. Donec interdum tellus est, eget euismod mi luctus quis. Pellentesque facilisis sagittis arcu sit amet fermentum. In ut tortor tincidunt, egestas ligula non, auctor ipsum. Integer tincidunt sit amet lectus congue sodales. Maecenas in justo maximus, malesuada turpis in, dapibus est. Nullam pretium suscipit finibus. Quisque venenatis massa ut ullamcorper bibendum. Aenean vel suscipit ipsum, sit amet convallis ipsum. Pellentesque lacinia sagittis tristique.</p>
+                        <p>Nunc quis urna pretium, sodales erat in, tempus tortor. Quisque risus ante, efficitur nec fermentum nec, feugiat non tortor. Sed ornare, nunc id finibus finibus, est ligula egestas nulla, blandit vestibulum tellus metus eget libero. In suscipit rhoncus sollicitudin. Mauris rutrum vestibulum purus, eu viverra quam accumsan ut. Etiam viverra risus urna, sed finibus odio luctus et. Maecenas dui ligula, vulputate sit amet luctus sit amet, vehicula quis nulla. Ut facilisis nisl eu dolor tincidunt semper non sit amet metus. Maecenas velit sem, vehicula vitae odio eu, sodales tristique libero. Nullam tincidunt orci ut est convallis, sit amet pulvinar justo malesuada. Phasellus bibendum, elit vel elementum molestie, metus ante cursus odio, et vestibulum augue leo eget eros. Etiam ac elit consectetur, rutrum felis ut, tincidunt erat. Morbi cursus quis quam in sollicitudin. Proin luctus non enim vel placerat. Proin suscipit ligula eget neque sodales semper. Duis congue sapien sed lacus pellentesque, id porttitor neque ultrices.</p>
+                        <a class="readmore" href="#">Read more</a>
+                    </article>
+                    <article class="art2">
+                        <header class="art-header">
+                            <h2 class="title"><a href="#">Second Post</a></h2>
+                            <span>Created by: Fred Flintstone on August 23, 2016</span>
+                        </header>
+                        <p>Sed efficitur lorem dolor, quis viverra ipsum efficitur nec. Nam ornare nisl et ligula vulputate laoreet vitae vel nunc. Aenean quis dolor sed massa consectetur pretium eget sit amet nibh. Suspendisse sodales, nunc lacinia consequat semper, orci nibh vestibulum nunc, feugiat condimentum ante dolor ut ex. Proin sit amet odio augue. Ut dictum nibh ex, ut ultrices tortor fermentum sed. In vitae consectetur felis. Duis feugiat nisi ac nisi tincidunt dignissim. Quisque leo sapien, vestibulum eu volutpat ac, vulputate vel sem. In velit lectus, tincidunt quis metus nec, dictum mollis neque. Morbi porttitor ligula ac augue tempus, eget accumsan ante mollis.</p>
+                        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin condimentum gravida diam at dictum. Vestibulum in auctor ligula. Praesent quis sapien et dui interdum rhoncus sit amet et mauris. Aenean dignissim lectus est, eu venenatis augue luctus in. Nunc urna lorem, laoreet at turpis vitae, tristique dapibus est. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Pellentesque eget mi in magna sodales bibendum. Nulla rhoncus porta dolor. Fusce orci dolor, luctus sed hendrerit sed, consectetur id nisi. Vivamus viverra cursus magna eget iaculis.</p>
+                        <a class="readmore" href="#">Read more</a>
+                    </article>
+                </div>
+                <aside id="sidebar">
+                    <div class="block">
+                        <h2>Top Sidebar</h2>
+                        <p>Nulla in cursus eros. Integer vel lobortis sapien. Curabitur rhoncus eleifend sem ac congue. Duis volutpat, neque a varius pellentesque, erat nisl suscipit mauris, non rhoncus nisi erat finibus elit. Sed vitae scelerisque eros. Morbi non felis et eros elementum aliquet vitae eu elit. Mauris a mauris non mauris tincidunt ullamcorper id nec lorem.</p>
+                    </div>
+                    <div class="block">
+                        <h2>Middle Sidebar</h2>
+                        <p>Donec ornare risus id finibus volutpat. Nullam a posuere neque. Duis sit amet metus non risus auctor facilisis quis ut leo. Nam purus nisi, tempus id viverra quis, lacinia eleifend diam. Duis pretium vitae tellus sit amet ornare. Donec hendrerit, diam vitae convallis interdum, nibh nunc ultricies quam, vitae sollicitudin nisi libero et dolor. Sed ut aliquet turpis. Etiam pretium nibh et enim condimentum scelerisque. Nam odio augue, vestibulum a fermentum sed, pellentesque et justo. In semper orci justo, nec faucibus augue faucibus vel.</p>
+                    </div>
+                    <div class="block">
+                        <h2>Bottom Sidebar</h2>
+                        <p>Praesent elementum nunc ac ex tempor tincidunt nec a lorem. Pellentesque vel molestie sapien. Sed tempor lacus dui, sit amet consequat elit commodo id. Vestibulum eu varius tellus, in fringilla massa. Suspendisse non vestibulum libero. Maecenas ornare quam a tincidunt volutpat. Proin lobortis id ipsum laoreet vulputate. Aenean at enim non tellus fermentum ornare sit amet vitae purus. Donec ullamcorper ante id suscipit aliquet. Mauris facilisis eros sed nisl hendrerit pretium.</p>
+                    </div>
+                </aside>
+            </div>
+            <div class="clr"></div>
+            <footer>
+                <p>Copyright &copy; 2016 Responsive Example</p>
+            </footer>
+        </div>
+    </body>
+</html>
