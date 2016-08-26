@@ -11,42 +11,110 @@
 </head>
 
 <body>
-    <!-- DESKTOP NAVIGATION -->
-    <nav class="top-bar">
-        <div class="wrapper">
-            <div class="top-bar-left">
-                <h3>Site Title</h3>
-            </div>
-            <div class="top-bar-right">
-                <ul class="menu">
+
+    <!-- --------------------------------------------------------
+   These two wrappers need to wrap the whole side
+   --------------------------------------------------------- -->
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+            <!-- --------------------------------------------------------
+               The menu is off the side and will slide in
+               --------------------------------------------------------- -->
+            <div class="off-canvas position-left" id="mobile-menu" data-off-canvas>
+                <!-- MOBILE NAVIGATION -->
+                <ul>
                     <li><a href="#">One</a></li>
                     <li><a href="#">Two</a></li>
                     <li><a href="#">Three</a></li>
                     <li><a href="#">Four</a></li>
                 </ul>
             </div>
+
+            <!-- --------------------------------------------------------
+            The whole site will be pushed to the side
+            --------------------------------------------------------- -->
+            <div class="off-canvas-content" data-off-canvas-content>
+
+                <div class="title-bar show-for-small-only">
+                    <div class="title-bar-left">
+                        <button class="menu-icon" type="button" data-open="mobile-menu"></button>
+                        <span class="title-bar-title">MENU</span>
+                    </div>
+                </div>
+
+                <!-- DESKTOP NAVIGATION -->
+                <nav class="top-bar nav-desktop">
+                    <div class="wrapper">
+                        <div class="top-bar-left">
+                            <h3 class="site-logo">Site Title</h3>
+                        </div>
+                        <div class="top-bar-right">
+                            <ul class="menu menu-desktop">
+                                <li><a href="#">One</a></li>
+                                <li><a href="#">Two</a></li>
+                                <li><a href="#">Three</a></li>
+                                <li><a href="#">Four</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- HERO SECTION -->
+                <section class="hero">
+                    <div class="wrapper">
+                        <h1>Welcome to Foundation 6!!!</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget sollicitudin nisi. Nulla rhoncus nisl orci, sit amet rutrum odio gravida a. Mauris consectetur justo ligula, vel vestibulum magna dictum vitae.</p>
+                        <a href="#" class="button">Learn More</a>
+                        <a href="#" class="button success">Contact Us</a>
+                    </div>
+                </section>
+
+                <!-- MAIN SECTION -->
+                <section class="main">
+                    <div class="row wrapper small-up-1 medium-up-2">
+                        <div class="column">
+                            <h1>Main Section</h1>
+                            <hr>
+                            <p>Donec vestibulum sodales semper. Phasellus mollis sem a libero tempor, vitae varius enim lacinia. Vestibulum eu blandit nisi. Donec quis consequat lorem, eu euismod ipsum. Morbi eros felis, gravida in eleifend at, porttitor ac libero. Ut pellentesque magna orci, non mollis leo suscipit eu. Donec luctus magna in ultrices egestas.</p>
+                        </div>
+                        <div class="column">
+                            <h1>Secondary Section</h1>
+                            <hr>
+                            <p>Donec vestibulum sodales semper. Phasellus mollis sem a libero tempor, vitae varius enim lacinia. Vestibulum eu blandit nisi. Donec quis consequat lorem, eu euismod ipsum. Morbi eros felis, gravida in eleifend at, porttitor ac libero. Ut pellentesque magna orci, non mollis leo suscipit eu. Donec luctus magna in ultrices egestas.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FOOTER -->
+                <footer>
+                    <div class="wrapper row small-up-1 medium-up-3">
+                        <div class="column">
+                            <h4>Contact Info</h4>
+                            <hr>
+                            <a href="#"><span>Phone</span> 234 234 2340</a>
+                            <a href="#"><span>Email</span> info@company.com</a>
+                            <a href="#"><span>Address</span> 123 Center Street</a>
+                        </div>
+                        <div class="column">
+                            <h4>Site Map</h4>
+                            <hr>
+                            <a href="#">About Us</a>
+                            <a href="#">Services</a>
+                            <a href="#">Contact Us</a>
+                        </div>
+                        <div class="column">
+                            <h4>Social Media</h4>
+                            <hr>
+                            <a href="#">Facebook</a>
+                            <a href="#">Twitter</a>
+                            <a href="#">Instagram</a>
+                        </div>
+                    </div>
+                </footer>
+            </div>
         </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <div class="wrapper">
-            <h1>Welcome to Foundation 6!!!</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eget sollicitudin nisi. Nulla rhoncus nisl orci, sit amet rutrum odio gravida a. Mauris consectetur justo ligula, vel vestibulum magna dictum vitae. Suspendisse potenti. Sed dignissim erat tellus, quis feugiat dui varius non. Donec vulputate tortor congue eros varius sodales. Integer eu cursus eros, eget hendrerit purus. Curabitur sed molestie leo. In vel lacus et metus rhoncus porta dapibus quis magna. Vivamus sit amet odio consectetur, eleifend ipsum ut, lobortis eros.</p>
-            <a href="#" class="button">Learn More</a>
-            <a href="#" class="button success">Contact Us</a>
-        </div>
-    </section>
-
-    <!-- MAIN SECTION -->
-    <section class="main">
-        <div class="wrapper"></div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <div class="wrapper"></div>
-    </footer>
+    </div>
 
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/what-input.js"></script>
